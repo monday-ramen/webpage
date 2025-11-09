@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あなたのプロジェクト名</title>
+    <title>Monday Ramen</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
-                <a href="#">YOUR LOGO</a>
+                <a href="#">Monday Ramen</a>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#News">News</a></li>
+                    <li><a href="#Menu">Menu</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Sponsors">Sponsors</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,52 +30,89 @@
     <main>
 
         <section class="hero">
+            <div class="hero-slider">
+                <div class="slide active" style="background-image: url('pic/slide/1.png');"></div>
+                <div class="slide" style="background-image: url('pic/slide/2.png');"></div>
+                <div class="slide" style="background-image: url('pic/slide/3.png');"></div>
+            </div>
             <div class="hero-content">
-                <h1>プロジェクトタイトル</h1>
-                <p>ここに印象的なキャッチコピーや説明文が入ります</p>
+                <h1></h1>
+                <p></p>
             </div>
         </section>
 
-        <section class="content-section light-bg">
+        <section id="News" class="content-section light-bg">
             <div class="container">
-                <h2>About Project</h2>
+                <h2>News</h2>
                 <p>
-                    ここにはプロジェクトの詳細な説明が入ります。
-                    
-                    参考サイトのように、テキストと画像を組み合わせてレイアウトすることができます。
-                    このセクションは白い背景を使用しています。
+                    ここには新着情報を記述
                 </p>
             </div>
         </section>
 
-        <section class="content-section dark-bg">
+        <section id="Menu" class="content-section dark-bg">
             <div class="container">
-                <h2>Artist / Message</h2>
-                <p>
-                    ここには別のトピック（例：アーティストの紹介）が入ります。
-                    参考サイトのように背景色を暗くする（ここでは黒）ことで、
-                    セクションの区切りを明確にし、視覚的な変化をつけています。
-                </p>
-            </div>
-        </section>
-
-        <section class="content-section light-bg">
-            <div class="container">
-                <h2>Works</h2>
-                <p>
-                    ここに作品のギャラリーや、関連情報を配置します。
-                    CSS GridやFlexboxを使うと、画像をきれいに並べることができます。
-                </p>
+                <h2>Menu</h2>
+                <div class="menu-slider-container">
+                    <button class="slider-btn prev-btn" onclick="changeMenuSlide(-1)">&#10094;</button>
+                    <div class="menu-slider">
+                        <img src="pic/menu/1.png" class="menu-slide active" alt="Menu 1">
+                        <img src="pic/menu/2.png" class="menu-slide" alt="Menu 2">
+                        <img src="pic/menu/3.png" class="menu-slide" alt="Menu 3">
+                        <img src="pic/menu/4.png" class="menu-slide" alt="Menu 4">
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeMenuSlide(1)">&#10095;</button>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="goToMenuSlide(0)"></span>
+                        <span class="dot" onclick="goToMenuSlide(1)"></span>
+                        <span class="dot" onclick="goToMenuSlide(2)"></span>
+                        <span class="dot" onclick="goToMenuSlide(3)"></span>
+                    </div>
                 </div>
+                <p>
+                    定番の塩ダレ豚づけ、濃厚鶏白湯ラーメンに加え、
+                    週代わりのメニューをご用意
+                </p>
+            </div>
+        </section>
+
+        <section id="About" class="content-section light-bg">
+            <div class="container">
+                <h2>About us</h2>
+                <p>
+                    ここに店の詳細やプロジェクトの詳細を記述
+                </p>
+            </div>
+        </section>
+
+        <section id="Sponsors" class="content-section dark-bg">
+            <div class="container">
+                <h2>Sponsors</h2>
+                <p>
+                    ここにスポンサー情報を記述
+                </p>
+            </div>
+        </section>
+
+        <section id="Contact" class="content-section light-bg">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>
+                    ここに店の詳細等を記述
+                </p>
+            </div>
         </section>
 
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 あなたのサイト名. All Rights Reserved.</p>
+            <p>&copy; 2025 Monday Ramen. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
+
 </body>
+
 </html>
