@@ -1,0 +1,134 @@
+/* --- 基本設定とリセット --- */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* 参考サイトの雰囲気に合わせ、基本フォントを指定 */
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.7;
+    background-color: #ffffff; /* ページの基本背景色 */
+    color: #333; /* 基本の文字色 */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; /* コンテンツの最大幅 */
+    margin: 0 auto; /* 中央揃え */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* リンクの色を親要素から継承 */
+}
+
+/* --- 1. ヘッダー --- */
+.site-header {
+    background-color: #ffffff; /* ヘッダーの背景色 (白) */
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea; /* 細い境界線 */
+    position: sticky; /* スクロールしてもヘッダーを固定 */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* ロゴとナビを両端に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #000; /* ロゴの色（黒） */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* メニュー項目の間隔 */
+}
+
+.main-nav a {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #888; /* マウスオーバー時の色 */
+}
+
+/* --- 2. ヒーローセクション (メインビジュアル) --- */
+.hero {
+    height: 85vh; /* 画面の高さの85% */
+    /* ここに背景画像や動画を指定します。
+      今回は黒い背景色で代用しています。
+    */
+    background-color: #111;
+    /* 例: background-image: url('images/main-visual.jpg'); 
+      background-size: cover;
+      background-position: center;
+    */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* テキストの色を白に */
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    /* 参考サイトのように明朝体（セリフ体）を指定すると雰囲気が出ます */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+/* --- 3. コンテンツセクション共通 --- */
+.content-section {
+    padding: 80px 0; /* 各セクションの上下の余白 */
+}
+
+.content-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* --- セクションごとの背景色 --- */
+.light-bg {
+    background-color: #ffffff; /* 明るい背景 (白) */
+    color: #333;
+}
+
+.dark-bg {
+    background-color: #111111; /* 暗い背景 (黒) */
+    color: #f4f4f4; /* 暗い背景用の文字色 */
+}
+
+.dark-bg h2 {
+    color: #ffffff; /* 暗い背景用の見出し色 */
+}
+
+/* --- 4. フッター --- */
+.site-footer {
+    background-color: #222; /* フッターの背景色 */
+    color: #aaa; /* フッターの文字色 */
+    padding: 50px 0;
+    text-align: center;
+}
