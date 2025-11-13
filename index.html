@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monday Ramen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,7 +18,7 @@
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
-                <a href="#">Monday Ramen</a>
+                <a href="#">TOP</a>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -21,7 +26,7 @@
                     <li><a href="#Menu">Menu</a></li>
                     <li><a href="#About">About</a></li>
                     <li><a href="#Sponsors">Sponsors</a></li>
-                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="#Contact">Information</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,42 +50,40 @@
             <div class="container">
                 <h2>News</h2>
                 <p>
-                    ここには新着情報を記述
+                    ここには新着情報を記述今週のメニューとか？
                 </p>
             </div>
         </section>
 
         <section id="Menu" class="content-section dark-bg">
-            <div class="container">
-                <h2>Menu</h2>
-                <div class="menu-slider-container">
-                    <button class="slider-btn prev-btn" onclick="changeMenuSlide(-1)">&#10094;</button>
-                    <div class="menu-slider">
-                        <img src="pic/menu/1.png" class="menu-slide active" alt="Menu 1">
-                        <img src="pic/menu/2.png" class="menu-slide" alt="Menu 2">
-                        <img src="pic/menu/3.png" class="menu-slide" alt="Menu 3">
-                        <img src="pic/menu/4.png" class="menu-slide" alt="Menu 4">
-                    </div>
-                    <button class="slider-btn next-btn" onclick="changeMenuSlide(1)">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" onclick="goToMenuSlide(0)"></span>
-                        <span class="dot" onclick="goToMenuSlide(1)"></span>
-                        <span class="dot" onclick="goToMenuSlide(2)"></span>
-                        <span class="dot" onclick="goToMenuSlide(3)"></span>
-                    </div>
+            <h2>Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="pic/menu/2.png" alt="塩だれとんづけ">
                 </div>
-                <p>
-                    定番の塩ダレ豚づけ、濃厚鶏白湯ラーメンに加え、
-                    週代わりのメニューをご用意
-                </p>
+                <div class="menu-item">
+                    <img src="pic/menu/5.png" alt="濃厚鶏白湯ラーメン">
+                </div>
+                <div class="menu-item">
+                    <img src="pic/menu/3.png" alt="週替わりメニュー">
+                </div>
+                <div class="menu-item">
+                    <img src="pic/menu/1.png" alt="限定メニュー">
+                </div>
+                <div class="menu-item">
+                    <img src="pic/menu/4.png" alt="サイドメニュー">
+                </div>
             </div>
         </section>
 
-        <section id="About" class="content-section light-bg">
-            <div class="container">
-                <h2>About us</h2>
+        <section id="About" class="content-section dark-bg">
+            <h2>About us</h2>
+            <div class="about-image">
+                <img src="pic/home.png" alt="Monday Ramen">
+            </div>
+            <div class="about-text">
                 <p>
-                    ここに店の詳細やプロジェクトの詳細を記述
+                    ここに思いを書く
                 </p>
             </div>
         </section>
@@ -88,19 +91,79 @@
         <section id="Sponsors" class="content-section dark-bg">
             <div class="container">
                 <h2>Sponsors</h2>
-                <p>
-                    ここにスポンサー情報を記述
-                </p>
+                <div class="sponsor-tier platinum">
+                    <h3 class="tier-title">Platinum</h3>
+                    <div class="sponsor-grid">
+                        <p class="sponsor-name">株式会社 岩井流通サービス 富岡 豊 様</p>
+                    </div>
+                </div>
+
+                <div class="sponsor-tier gold">
+                    <h3 class="tier-title">Gold</h3>
+                    <div class="sponsor-grid">
+                        <p class="sponsor-name">株式会社 鴨狩商店 鴨狩真義 様</p>
+                    </div>
+                </div>
+
+                <div class="sponsor-tier silver">
+                    <h3 class="tier-title">Silver</h3>
+                    <div class="sponsor-grid">
+                        <p class="sponsor-name">宮崎商店 宮崎 崇之 様</p>
+                        <p class="sponsor-name">孝和商事株式会社 染谷 義孝 様</p>
+                        <p class="sponsor-name">株式会社 虹建 江田 和輝 様</p>
+                        <p class="sponsor-name">窪田味噌醤油株式会社 様</p>
+                        <p class="sponsor-name">上原人形店 上原 雄一郎 様</p>
+                        <p class="sponsor-name">NPO法人 Earth as Mother 浅野 泰泉 様</p>
+                        <p class="sponsor-name">NPO法人 Earth as Mother 待山 弘 様</p>
+                        <p class="sponsor-name">株式会社 寿工業 保延 和 様</p>
+                        <p class="sponsor-name">有限会社 コスモス環境サービス 永見 久雄 様</p>
+                        <p class="sponsor-name">株式会社 エイ・エフロジテム 戸邊 安徳 様</p>
+                        <p class="sponsor-name">東京理科大学 地域連携室 杉崎 芳子 様</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="Contact" class="content-section light-bg">
             <div class="container">
-                <h2>Contact</h2>
-                <p>
-                    ここに店の詳細等を記述
-                </p>
+                <h2>Store Information</h2>
+                <div class="contact-info">
+                    <table class="info-table">
+                        <tr>
+                            <th>店名</th>
+                            <td>Monday Ramen</td>
+                        </tr>
+                        <tr>
+                            <th>営業日</th>
+                            <td>毎週月曜日</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>11:00 - 15:00 18:00 - 22:00(30分前L.O.)</td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td>千葉県野田市中根6-9 二代目 麺屋こうじ 野田店
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1614.9517138385947!2d139.8750312983948!3d35.9493323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601899598003f481%3A0x796712540813f5a1!2z5pyI5puc44Gg44GR44Gu44Op44O844Oh44Oz5bGLIH5SQU1FTiBNT05EQVl-!5e0!3m2!1sja!2sus!4v1762670785661!5m2!1sja!2sus"
+                                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>代表</th>
+                            <td>川本 竜靖</td>
+                        </tr>
+                        <tr>
+                            <th>メール</th>
+                            <td>monday[at]ramencircle.com</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+
+
+
         </section>
 
     </main>
