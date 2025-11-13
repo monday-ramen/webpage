@@ -242,7 +242,7 @@ a {
     object-fit: contain;
     display: block;
     /* 遅延読み込み時の背景色 */
-    background-color: #1a1a1a;
+    background-color: #000000;
 }
 
 /* レスポンシブ対応 */
@@ -260,7 +260,7 @@ a {
 }
 
 .dark-bg {
-    background-color: #111111;
+    background-color: #000000;
     /* 暗い背景 (黒) */
     color: #f4f4f4;
     /* 暗い背景用の文字色 */
