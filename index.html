@@ -17,7 +17,7 @@
             rel="stylesheet">
     </noscript>
     <!-- 画像のプリロード（LCP改善） -->
-    <link rel="preload" as="image" href="pic/slide/1.png">
+    <link rel="preload" as="image" href="pic/slide/home1.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -43,14 +43,14 @@
     <main>
 
         <section class="hero">
-            <div class="hero-slider">
-                <div class="slide active" style="background-image: url('pic/slide/1.png');"></div>
-                <div class="slide" data-bg="pic/slide/2.png"></div>
-                <div class="slide" data-bg="pic/slide/3.png"></div>
+            <img src="pic/slide/home1.jpg" alt="Monday Ramen" class="hero-image">
+            <!-- 左からスライドインする画像 -->
+            <div class="overlay-image">
+                <img src="pic/slide/10.png" alt="Monday Ramen">
             </div>
-            <div class="hero-content">
-                <h1></h1>
-                <p></p>
+            <!-- 右からスライドインする画像 -->
+            <div class="overlay-image-right">
+                <img src="pic/slide/11.png" alt="Monday Ramen">
             </div>
         </section>
 

@@ -1,35 +1,3 @@
-// 画像スライドショー
-document.addEventListener('DOMContentLoaded', function () {
-    // ヒーローセクションのスライダー
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-
-    // 遅延読み込み: data-bg属性から背景画像をロード
-    slides.forEach((slide, index) => {
-        if (index > 0 && slide.dataset.bg) {
-            const img = new Image();
-            img.onload = () => {
-                slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
-            };
-            img.src = slide.dataset.bg;
-        }
-    });
-
-    function nextSlide() {
-        // 現在のスライドから active クラスを削除
-        slides[currentSlide].classList.remove('active');
-
-        // 次のスライドへ移動（最後まで行ったら最初に戻る）
-        currentSlide = (currentSlide + 1) % slides.length;
-
-        // 新しいスライドに active クラスを追加
-        slides[currentSlide].classList.add('active');
-    }
-
-    // 5秒ごとに次のスライドへ自動切り替え
-    setInterval(nextSlide, 5000);
-});
-
 // Google Maps の遅延読み込み
 function loadMap() {
     const mapContainer = document.getElementById('map-container');
