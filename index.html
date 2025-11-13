@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monday Ramen</title>
+    <!-- フォントの最適化 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <!-- 画像のプリロード（LCP改善） -->
+    <link rel="preload" as="image" href="pic/slide/1.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -37,8 +45,8 @@
         <section class="hero">
             <div class="hero-slider">
                 <div class="slide active" style="background-image: url('pic/slide/1.png');"></div>
-                <div class="slide" style="background-image: url('pic/slide/2.png');"></div>
-                <div class="slide" style="background-image: url('pic/slide/3.png');"></div>
+                <div class="slide" data-bg="pic/slide/2.png"></div>
+                <div class="slide" data-bg="pic/slide/3.png"></div>
             </div>
             <div class="hero-content">
                 <h1></h1>
@@ -59,19 +67,19 @@
             <h2>Menu</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="pic/menu/2.png" alt="塩だれとんづけ">
+                    <img src="pic/menu/2.png" alt="塩だれとんづけ" loading="lazy">
                 </div>
                 <div class="menu-item">
-                    <img src="pic/menu/5.png" alt="濃厚鶏白湯ラーメン">
+                    <img src="pic/menu/5.png" alt="濃厚鶏白湯ラーメン" loading="lazy">
                 </div>
                 <div class="menu-item">
-                    <img src="pic/menu/3.png" alt="週替わりメニュー">
+                    <img src="pic/menu/3.png" alt="週替わりメニュー" loading="lazy">
                 </div>
                 <div class="menu-item">
-                    <img src="pic/menu/1.png" alt="限定メニュー">
+                    <img src="pic/menu/1.png" alt="限定メニュー" loading="lazy">
                 </div>
                 <div class="menu-item">
-                    <img src="pic/menu/4.png" alt="サイドメニュー">
+                    <img src="pic/menu/4.png" alt="サイドメニュー" loading="lazy">
                 </div>
             </div>
         </section>
@@ -79,7 +87,7 @@
         <section id="About" class="content-section dark-bg">
             <h2>About us</h2>
             <div class="about-image">
-                <img src="pic/home.png" alt="Monday Ramen">
+                <img src="pic/home.png" alt="Monday Ramen" loading="lazy">
             </div>
             <div class="about-text">
                 <p>
@@ -144,10 +152,10 @@
                         <tr>
                             <th>住所</th>
                             <td>千葉県野田市中根6-9 二代目 麺屋こうじ 野田店
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1614.9517138385947!2d139.8750312983948!3d35.9493323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601899598003f481%3A0x796712540813f5a1!2z5pyI5puc44Gg44GR44Gu44Op44O844Oh44Oz5bGLIH5SQU1FTiBNT05EQVl-!5e0!3m2!1sja!2sus!4v1762670785661!5m2!1sja!2sus"
-                                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div id="map-container" style="margin-top: 10px;">
+                                    <button id="load-map-btn" onclick="loadMap()"
+                                        style="padding: 10px 20px; cursor: pointer; background: #8b0000; color: white; border: none; border-radius: 5px;">地図を表示</button>
+                                </div>
                             </td>
                         </tr>
                         <tr>

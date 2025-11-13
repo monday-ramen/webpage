@@ -40,7 +40,7 @@ a {
 
 /* --- 1. ヘッダー --- */
 .site-header {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.85);
     /* ヘッダー内の文字色（リンクはinheritで継承されます） */
     color: #ffffff;
     fill: #ffffff;
@@ -52,8 +52,7 @@ a {
     /* スクロールしてもヘッダーを固定 */
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filterを削除してパフォーマンス向上 */
 }
 
 .header-container {
@@ -131,6 +130,8 @@ a {
     background-color: #111;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
+    will-change: opacity;
+    /* GPU アクセラレーション */
 }
 
 /* アクティブなスライド */
@@ -240,6 +241,8 @@ a {
     height: auto;
     object-fit: contain;
     display: block;
+    /* 遅延読み込み時の背景色 */
+    background-color: #1a1a1a;
 }
 
 /* レスポンシブ対応 */
