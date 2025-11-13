@@ -66,23 +66,32 @@
         <section id="Menu" class="content-section dark-bg">
             <h2>Menu</h2>
             <div class="menu-grid">
-                <div class="menu-item">
+                <div class="menu-item" data-comment="塩だれとんづけ - 豚肉の旨味が凝縮された人気の一品です。">
                     <img src="pic/menu/2.png" alt="塩だれとんづけ" loading="lazy">
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-comment="濃厚鶏白湯ラーメン - クリーミーで濃厚なスープが自慢の逸品です。">
                     <img src="pic/menu/5.png" alt="濃厚鶏白湯ラーメン" loading="lazy">
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-comment="週替わりメニュー - 毎週変わる特別なメニューをお楽しみください。">
                     <img src="pic/menu/3.png" alt="週替わりメニュー" loading="lazy">
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-comment="限定メニュー - 数量限定の特別なラーメンです。">
                     <img src="pic/menu/1.png" alt="限定メニュー" loading="lazy">
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-comment="サイドメニュー - ラーメンと一緒にお楽しみください。">
                     <img src="pic/menu/4.png" alt="サイドメニュー" loading="lazy">
                 </div>
             </div>
         </section>
+
+        <!-- モーダル -->
+        <div id="menuModal" class="modal">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="">
+                <div id="modalComment" class="modal-comment"></div>
+            </div>
+        </div>
 
         <section id="About" class="content-section dark-bg">
             <h2>About us</h2>
