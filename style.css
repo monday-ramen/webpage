@@ -179,7 +179,7 @@ a {
     transform: translate(-50%, 100%);
     width: min(90%, 1100px);
     z-index: 50;
-    transition: transform 700ms cubic-bezier(.22,.8,.32,1), opacity 400ms ease;
+    transition: transform 700ms cubic-bezier(.22, .8, .32, 1), opacity 400ms ease;
     opacity: 0;
     pointer-events: none;
 }
@@ -200,22 +200,36 @@ a {
     background: rgba(0, 0, 0, 0.55);
     padding: 10px 16px;
     border-radius: 8px;
-    text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
     /* 背景のぼかし（対応ブラウザのみ） */
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
 }
 
 @media (max-width: 768px) {
+
     /* タブレットではやや上に表示 */
-    .hero-cta { bottom: 12%; }
-    .hero-cta-text { font-size: clamp(1rem, 4.2vw, 1.6rem); }
+    .hero-cta {
+        bottom: 12%;
+    }
+
+    .hero-cta-text {
+        font-size: clamp(1rem, 4.2vw, 1.6rem);
+    }
 }
 
 @media (max-width: 480px) {
+
     /* モバイルでは上寄せ（だが画面に重ならないように注意） */
-    .hero-cta { bottom: 10%; width: 95%; }
-    .hero-cta-text { font-size: 1rem; padding: 6px 10px; }
+    .hero-cta {
+        bottom: 10%;
+        width: 95%;
+    }
+
+    .hero-cta-text {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
 }
 
 /* --- 3. コンテンツセクション共通 --- */
@@ -341,11 +355,11 @@ a {
     }
 }
 
+/*
 @media (max-width: 480px) {
     .overlay-omoi {
         width: 95%;
         top: 6%;
-        /* モバイルでは親要素の高さで切れることがあるため固定配置にしてクリッピングを防ぐ */
         position: fixed;
         left: 50%;
         transform: translate(-50%, 100%);
@@ -366,6 +380,7 @@ a {
         font-size: 0.95rem;
     }
 }
+*/
 
 /* --- メニューセクション --- */
 #Menu {
@@ -609,6 +624,12 @@ a {
     font-size: 1.3rem;
     padding: 30px;
     font-weight: 500;
+}
+
+/* Silver スポンサー専用スタイル: 行間を狭くして表示を詰める */
+.sponsor-tier.silver .sponsor-name {
+    /* body の line-height が 1.7 に設定されているため、Silver は狭めに調整 */
+    line-height: 0.1;
 }
 
 /* レスポンシブ: 小さい画面では1列に */
