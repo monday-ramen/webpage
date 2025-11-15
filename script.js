@@ -60,4 +60,22 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = ''; // スクロールを有効化
         }
     });
+
+    // About セクションに到達したら omoi.png を下からスライドアップ表示する
+    const aboutSection = document.getElementById('About');
+    const overlayOmoi = document.querySelector('.overlay-omoi');
+    if (aboutSection && overlayOmoi && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    overlayOmoi.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+        io.observe(aboutSection);
+    } else if (overlayOmoi) {
+        // フォールバック: ページロード後にすぐ表示
+        overlayOmoi.classList.add('visible');
+    }
 });

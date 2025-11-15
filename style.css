@@ -199,12 +199,42 @@ a {
 
 .about-image {
     margin: 0;
+    position: relative;
+    /* 重ねるために相対位置を親に設定 */
+    overflow: hidden;
+    /* はみ出しを隠す */
 }
 
 .about-image img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* overlay-omoi: 下からスライドアップしてくる画像 */
+.overlay-omoi {
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    transform: translate(-50%, 100%);
+    /* 初期状態は下に隠す */
+    width: 70%;
+    max-width: 720px;
+    z-index: 20;
+    pointer-events: none;
+    /* 画像のクリックを妨げない */
+    transition: transform 800ms cubic-bezier(.22, .8, .32, 1);
+}
+
+.overlay-omoi img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* visible クラスを付与するとスライドアップする */
+.overlay-omoi.visible {
+    transform: translate(-50%, 0%);
 }
 
 .about-text {
