@@ -64,6 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // About セクションに到達したら omoi.png を下からスライドアップ表示する
     const aboutSection = document.getElementById('About');
     const overlayOmoi = document.querySelector('.overlay-omoi');
+    // ヒーローのCTAを下からスライドアップ表示（ページ読み込み時）
+    const heroCta = document.querySelector('.hero-cta');
+    if (heroCta) {
+        // 少し遅延してスライドアップさせる
+        setTimeout(() => heroCta.classList.add('visible'), 450);
+    }
     // data-top 属性で上位置を直接指定できるようにする
     // 例: <div class="overlay-omoi" data-top="120px"> または data-top="15%"
     if (overlayOmoi && overlayOmoi.dataset && overlayOmoi.dataset.top) {
