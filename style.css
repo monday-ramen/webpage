@@ -215,7 +215,8 @@ a {
 .overlay-omoi {
     position: absolute;
     left: 50%;
-    bottom: 15%;
+    /* さらに上に表示するため bottom を増やす */
+    top: 10%;
     transform: translate(-50%, 100%);
     /* 初期状態は下に隠す */
     width: 70%;
@@ -237,6 +238,30 @@ a {
     transform: translate(-50%, 0%);
 }
 
+/* omoi のテキストスタイル */
+.omoi-text {
+    color: #ffffff;
+    background: transparent;
+    padding: 18px 22px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.omoi-text h3 {
+    margin: 0 0 50px 0;
+    /* h3 と p の間により広い隙間を追加 */
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.omoi-text p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* About テキストのコンテナ */
 .about-text {
     max-width: 900px;
     margin: 40px auto;
