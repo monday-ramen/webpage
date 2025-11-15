@@ -215,15 +215,14 @@ a {
 .overlay-omoi {
     position: absolute;
     left: 50%;
-    /* さらに上に表示するため bottom を増やす */
+    /* デフォルトは top 指定（data-top があれば JS が上書きします） */
     top: 10%;
     transform: translate(-50%, 100%);
-    /* 初期状態は下に隠す */
-    width: 70%;
-    max-width: 720px;
+    /* 幅は画面に応じて変化（最大920px）。より大きく表示されるように調整 */
+    width: min(85%, 920px);
     z-index: 20;
-    pointer-events: none;
-    /* 画像のクリックを妨げない */
+    /* テキストを選択したいため pointer-events は有効にする */
+    pointer-events: auto;
     transition: transform 800ms cubic-bezier(.22, .8, .32, 1);
 }
 
@@ -242,23 +241,24 @@ a {
 .omoi-text {
     color: #ffffff;
     background: transparent;
-    padding: 18px 22px;
+    padding: 22px 28px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .omoi-text h3 {
-    margin: 0 0 50px 0;
-    /* h3 と p の間により広い隙間を追加 */
-    font-size: 2rem;
+    margin: 0 0 16px 0;
+    /* h3 と p の間に空白を作る（必要に応じ調整） */
+
+    font-size: clamp(1.4rem, 3.2vw, 2.6rem);
     font-weight: 700;
 }
 
 .omoi-text p {
     margin: 0;
     line-height: 1.6;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
 }
 
 /* About テキストのコンテナ */
@@ -272,6 +272,45 @@ a {
 .about-text p {
     font-size: 1.05rem;
     color: #000000;
+}
+
+/* レスポンシブ調整: タブレット以下や小さい画面向け */
+@media (max-width: 768px) {
+    .overlay-omoi {
+        width: 90%;
+        top: 8%;
+    }
+
+    .omoi-text {
+        padding: 14px 16px;
+    }
+
+    .omoi-text h3 {
+        font-size: clamp(1.1rem, 3.2vw, 1.8rem);
+    }
+
+    .omoi-text p {
+        font-size: clamp(0.9rem, 2.6vw, 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-omoi {
+        width: 95%;
+        top: 6%;
+    }
+
+    .omoi-text {
+        padding: 12px 14px;
+    }
+
+    .omoi-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .omoi-text p {
+        font-size: 0.95rem;
+    }
 }
 
 /* --- メニューセクション --- */
