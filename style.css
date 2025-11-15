@@ -250,7 +250,6 @@ a {
 .omoi-text h3 {
     margin: 0 0 16px 0;
     /* h3 と p の間に空白を作る（必要に応じ調整） */
-
     font-size: clamp(1.4rem, 3.2vw, 2.6rem);
     font-weight: 700;
 }
@@ -298,6 +297,13 @@ a {
     .overlay-omoi {
         width: 95%;
         top: 6%;
+        /* モバイルでは親要素の高さで切れることがあるため固定配置にしてクリッピングを防ぐ */
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        z-index: 9999;
+        max-height: 70vh;
+        overflow-y: auto;
     }
 
     .omoi-text {
