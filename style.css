@@ -322,6 +322,10 @@ a {
     border-radius: 8px;
     font-size: 1.1rem;
     line-height: 1.6;
+    /* 属性内の改行文字 (\n) をそのまま表示するために pre-wrap を使用 */
+    white-space: pre-wrap;
+    /* 長い単語やURLなどがはみ出さないように折り返す */
+    word-break: break-word;
     max-width: 600px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
