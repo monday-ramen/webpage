@@ -90,4 +90,43 @@ document.addEventListener('DOMContentLoaded', function () {
         // フォールバック: ページロード後にすぐ表示
         overlayOmoi.classList.add('visible');
     }
+
+    // ハンバーガーメニューのトグル（モバイル）
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+    if (hamburger && mainNav) {
+        hamburger.addEventListener('click', function (e) {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            this.classList.toggle('active');
+            mainNav.classList.toggle('open');
+        });
+
+        // ナビ内リンクを押したら閉じる
+        mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            if (mainNav.classList.contains('open')) {
+                mainNav.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        }));
+
+        // 外側クリックで閉じる
+        document.addEventListener('click', function (e) {
+            if (mainNav.classList.contains('open') && !mainNav.contains(e.target) && !hamburger.contains(e.target)) {
+                mainNav.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // ウィンドウ幅が戻ったら閉じる
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && mainNav.classList.contains('open')) {
+                mainNav.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 });

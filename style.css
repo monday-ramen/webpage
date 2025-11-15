@@ -155,6 +155,93 @@ a {
     /* マウスオーバー時の色 */
 }
 
+/* ハンバーガーメニュー（デフォルトは非表示。モバイルで表示） */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 45px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+    /* 線同士の間隔を少し狭める（以前は 4px） */
+    margin: 2px 0;
+    transition: transform 250ms ease, opacity 200ms ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* モバイル時のナビ表示 */
+@media (max-width: 768px) {
+    .header-container {
+        position: relative;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        display: none;
+        z-index: 1200;
+        padding-bottom: 12px;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 8px 0;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 12px 20px;
+        color: #ffffff;
+    }
+
+    .main-nav a:hover {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* メニューをデスクトップで横並びにしていた .main-nav ul の設定と被らないように調整 */
+    .main-nav ul {
+        justify-content: flex-start;
+    }
+}
+
 /* --- 2. ヒーローセクション (メイン画像) --- */
 .hero {
     width: 100%;
@@ -629,7 +716,7 @@ a {
 /* Silver スポンサー専用スタイル: 行間を狭くして表示を詰める */
 .sponsor-tier.silver .sponsor-name {
     /* body の line-height が 1.7 に設定されているため、Silver は狭めに調整 */
-    line-height: 0.1;
+    line-height: 1.25;
 }
 
 /* レスポンシブ: 小さい画面では1列に */
