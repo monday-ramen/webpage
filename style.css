@@ -444,53 +444,34 @@ a {
 
 @media (max-width: 480px) {
 
-    /* モバイルではオーバーレイを画面下部に固定して最大高さを制限、縦スクロールで全文を読めるようにする */
+    /* スマホではオーバーレイの位置はそのままにしつつ、文字を小さくして収まるようにする */
     .overlay-omoi {
         width: 95%;
-        top: auto;
-        bottom: 0;
-        position: fixed;
+        top: 6%;
+        position: absolute;
         left: 50%;
-        /* 初期状態は画面外下にあり、.visible が付くとスライドアップする */
+        /* 初期は下に隠れる（.visible でスライドアップ） */
         transform: translate(-50%, 100%);
-        z-index: 9999;
-        max-height: 75vh;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        /* 少しマージンを入れて端から離す */
-        padding-bottom: 6px;
-    }
-
-    /* visible になれば下から上にスライドして表示される */
-    .overlay-omoi.visible {
-        transform: translate(-50%, 0%);
+        z-index: 20;
     }
 
     .omoi-text {
-        padding: 12px 14px;
-        background: rgba(0, 0, 0, 0.75);
-        color: #ffffff;
-        text-align: left;
-        border-radius: 12px 12px 0 0;
-        box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.4);
+        padding: 10px 12px;
     }
 
     .omoi-text h3 {
-        font-size: 1.05rem;
+        font-size: 1rem;
         margin: 0 0 8px 0;
     }
 
     .omoi-text p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin: 0;
-        white-space: normal;
-        word-break: break-word;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
-    /* フッターや固定要素と被らないように、モバイルではページ下部に余白を追加 */
+    /* body の余白を元に戻す（固定オーバーレイではないため不要） */
     body {
-        padding-bottom: 90px;
+        padding-bottom: 0;
     }
 }
 
