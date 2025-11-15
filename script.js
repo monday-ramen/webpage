@@ -60,4 +60,28 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = ''; // スクロールを有効化
         }
     });
+
+    // About セクションに到達したら omoi.png を下からスライドアップ表示する
+    const aboutSection = document.getElementById('About');
+    const overlayOmoi = document.querySelector('.overlay-omoi');
+    // data-top 属性で上位置を直接指定できるようにする
+    // 例: <div class="overlay-omoi" data-top="120px"> または data-top="15%"
+    if (overlayOmoi && overlayOmoi.dataset && overlayOmoi.dataset.top) {
+        overlayOmoi.style.top = overlayOmoi.dataset.top;
+        overlayOmoi.style.bottom = 'auto';
+    }
+    if (aboutSection && overlayOmoi && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    overlayOmoi.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+        io.observe(aboutSection);
+    } else if (overlayOmoi) {
+        // フォールバック: ページロード後にすぐ表示
+        overlayOmoi.classList.add('visible');
+    }
 });

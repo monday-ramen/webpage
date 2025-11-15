@@ -199,6 +199,10 @@ a {
 
 .about-image {
     margin: 0;
+    position: relative;
+    /* 重ねるために相対位置を親に設定 */
+    overflow: hidden;
+    /* はみ出しを隠す */
 }
 
 .about-image img {
@@ -207,6 +211,57 @@ a {
     display: block;
 }
 
+/* overlay-omoi: 下からスライドアップしてくる画像 */
+.overlay-omoi {
+    position: absolute;
+    left: 50%;
+    /* さらに上に表示するため bottom を増やす */
+    top: 10%;
+    transform: translate(-50%, 100%);
+    /* 初期状態は下に隠す */
+    width: 70%;
+    max-width: 720px;
+    z-index: 20;
+    pointer-events: none;
+    /* 画像のクリックを妨げない */
+    transition: transform 800ms cubic-bezier(.22, .8, .32, 1);
+}
+
+.overlay-omoi img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* visible クラスを付与するとスライドアップする */
+.overlay-omoi.visible {
+    transform: translate(-50%, 0%);
+}
+
+/* omoi のテキストスタイル */
+.omoi-text {
+    color: #ffffff;
+    background: transparent;
+    padding: 18px 22px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.omoi-text h3 {
+    margin: 0 0 50px 0;
+    /* h3 と p の間により広い隙間を追加 */
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.omoi-text p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* About テキストのコンテナ */
 .about-text {
     max-width: 900px;
     margin: 40px auto;
@@ -322,6 +377,10 @@ a {
     border-radius: 8px;
     font-size: 1.1rem;
     line-height: 1.6;
+    /* 属性内の改行文字 (\n) をそのまま表示するために pre-wrap を使用 */
+    white-space: pre-wrap;
+    /* 長い単語やURLなどがはみ出さないように折り返す */
+    word-break: break-word;
     max-width: 600px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
