@@ -1,0 +1,7 @@
+# robots.txt for Monday Ramen
+# Allow all crawlers. Adjust as needed.
+User-agent: *
+Allow: /
+
+# Update the Sitemap URL to your real site URL (absolute URL required)
+Sitemap: https://monday.ramencircle.com/sitemap.xml
