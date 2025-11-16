@@ -4,14 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monday Ramen</title>
+    <title>Monday Ramen — 月曜限定の学生運営ラーメン（野田市）</title>
+    <!-- Primary SEO meta -->
+    <meta name="description"
+        content="千葉県野田市の学生が運営する月曜限定ラーメン店「Monday Ramen」。週替わりメニューや定番の塩だれとんづけ、店舗情報やアクセスはこちらから。学生の情熱が詰まった一杯を月曜限定で提供します。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#000000">
+    <meta name="keywords" content="月曜限定,ラーメン,千葉,野田市,学生運営,Monday Ramen,とんづけ,鶏白湯">
+
     <!-- フォントの最適化 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <!-- 画像のプリロード(LCP改善) -->
     <link rel="preload" as="image" href="pic/slide/home1.jpg">
+    <!-- favicon -->
+    <link rel="icon" href="/pic/logo.png" sizes="32x32">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Open Graph / SNS meta -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:site_name" content="Monday Ramen">
+    <meta property="og:title" content="Monday Ramen — 月曜限定の学生運営ラーメン（野田市）">
+    <meta property="og:description" content="千葉県野田市の学生が運営する月曜限定ラーメン店。週替わりメニューや定番の一杯。営業時間やアクセスはこちら。">
+    <meta property="og:url" content="https://monday.ramencircle.com">
+    <meta property="og:image" content="https://monday.ramencircle.com/pic/slide/home1.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Monday Ramen — 月曜限定の学生運営ラーメン（野田市）">
+    <meta name="twitter:description" content="千葉県野田市の学生が運営する月曜限定ラーメン店。週替わりメニューや定番の一杯。営業時間やアクセスはこちら。">
+    <meta name="twitter:image" content="https://monday.ramencircle.com/pic/slide/home1.jpg">
+
+    <!-- JSON-LD 構造化データ（schema.org: Restaurant） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Monday Ramen",
+      "description": "月曜限定で営業する学生運営のラーメン店。週替わりメニューや定番メニューを提供しています。",
+      "url": "https://monday.ramencircle.com",
+      "image": [
+        "https://monday.ramencircle.com/pic/slide/home1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "千葉県野田市中根6-9 二代目 麺屋こうじ 野田店",
+        "addressLocality": "野田市",
+        "addressRegion": "千葉県",
+        "addressCountry": "JP"
+      },
+      "telephone": "",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "11:00",
+          "closes": "15:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "18:00",
+          "closes": "22:00"
+        }
+      ],
+      "priceRange": "¥",
+      "servesCuisine": "Ramen"
+    }
+    </script>
+
 </head>
 
 <body>
@@ -43,7 +106,7 @@
     <main>
 
         <section class="hero">
-            <img src="pic/slide/home1.jpg" alt="Monday Ramen" class="hero-image">
+            <img src="pic/slide/home1.jpg" alt="Monday Ramen 店舗外観 — 月曜限定の学生運営ラーメン" class="hero-image">
             <div class="hero-cta" aria-hidden="false">
                 <div class="hero-cta-text">月曜だけ、本気の学生がやっているラーメン屋あります</div>
             </div>
@@ -52,7 +115,7 @@
         <section id="About" class="content-section dark-bg">
             <h2>About us</h2>
             <div class="about-image">
-                <img src="pic/home.png" alt="Monday Ramen" loading="lazy">
+                <img src="pic/home.png" alt="学生たちの仕込み風景・店舗イメージ" loading="lazy">
                 <!-- 下からスライドアップして重なる文章 -->
                 <div class="overlay-omoi">
                     <div class="omoi-text">
